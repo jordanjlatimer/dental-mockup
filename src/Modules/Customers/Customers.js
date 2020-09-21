@@ -1,19 +1,9 @@
 import React, { useState } from 'react';
 import ActionBar from '../SubModules/ActionBar';
-import CreationForm from './CreationForm';
+import AddForm from './AddForm';
 import Modal from '../SubModules/Modal';
 import Table from '../SubModules/Table';
-
-const data = {
-  headers: ["Name", "Profit Margin", "Total Profit", "Last Procedure"],
-  rows: [
-    ["Jimmy", "17.5%", "$2400", "08/09/2020"],
-    ["Pheobe", "16.2%", "$1765", "02/18/2020"],
-    ["Freddy", "22.1%", "$870", "05/01/2020"],
-    ["Jerry", "19.0%", "$560", "06/24/2020"],
-    ["Amy", "20.8%", "$3190", "12/02/2019"],
-  ]
-}
+import data from "./mockData.json"
 
 export default function Customers(props){
   const [modal, setModal] = useState(false);
@@ -39,7 +29,7 @@ export default function Customers(props){
           />
         </>
       ) : (
-        <CreationForm/>
+        <AddForm/>
       )}
     </>
   )

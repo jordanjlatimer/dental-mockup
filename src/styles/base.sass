@@ -46,7 +46,7 @@ html, body, #root
     transform: translateX(4px)
     background-color: rgba(32, 102, 167, 0.5)
   &.active
-    margin-left: 12px
+    margin-left: 2px
     background-image: linear-gradient(0.25turn,#2066a7, #339cff)
     transform: translateX(10px)
     border-radius: 25px 0px 0px 25px
@@ -124,8 +124,9 @@ html, body, #root
   padding: 10px
   transition: all 300ms
   cursor: pointer
+  > svg
+    margin-right: 10px
   > p
-    margin-left: 10px
     font-size: 18px
     align-self: center
   &.positive
@@ -140,13 +141,20 @@ html, body, #root
 
 table
   width: 100%
+  box-shadow: 0px 0px 8px 0px
 
 th
-  font-size: 22px
+  font-size: 18px
   background-color: #0e2b47
   color: white
-  padding: 12px 6px
+  padding: 12px 30px 12px 6px
   text-align: left
+  cursor: pointer
+  svg
+    position: absolute
+    top: 50%
+    right: 10px
+    transform: translateY(-50%)
 
 tbody tr
   transition: all 0ms
@@ -164,7 +172,7 @@ tbody tr
     box-shadow: 2px 0px 8px 0px black
   td
     font-size: 15px
-    padding: 10px 22px
+    padding: 10px 10px 10px 22px
 
 .recordActions
   display: flex
@@ -260,29 +268,29 @@ tbody tr
 .input
   padding: 0px 20px 0px 0px
   p
-    font-size: 18px
+    font-size: 15px
   input
     width: 180px
     height: 30px
-    margin-top: 2px
+    margin-top: 4px
     padding: 5px
     border: 2px solid rgba(0, 0, 0, 0.5)
     border-radius: 2px
-    font-size: 15px
+    font-size: 13px
     transition: all 300ms
     &:hover, &:focus
       box-shadow: 2px 2px 8px 0px #6e6e6e
 
 .select
-  font-size: 18px
-  padding: 0px 10px 0px 0px
+  font-size: 15px
+  padding: 0px 20px 0px 0px
 
 .selectControl
   display: flex
   flex-wrap: wrap
   align-items: center
   padding: 0px 5px
-  margin-top: 2px
+  margin-top: 4px
   width: 180px
   height: 30px
   height: 30px
@@ -294,7 +302,7 @@ tbody tr
     box-shadow: 2px 2px 8px 0px #6e6e6e
   p
     flex-grow: 1
-    font-size: 15px
+    font-size: 13px
     opacity: 0.7
     &.selected
       opacity: 1
@@ -327,7 +335,7 @@ tbody tr
 .selectItem
   padding: 8px
   cursor: pointer
-  font-size: 15px
+  font-size: 13px
   transition: all 300ms
   &:hover
     background-color: #d4d4d4

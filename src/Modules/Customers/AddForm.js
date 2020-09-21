@@ -21,7 +21,16 @@ export default function CreationForm(props){
       </FormGroup>
       <FormGroup>
         <TextInput label="Insurance Provider"/>
-        <TextInput label="Policy Number"/>
+        <NumberInput label="Policy Number"/>
+      </FormGroup>
+      <FormGroup>
+        <TextInput label="Phone Number"/>
+        <TextInput label="Email"/>
+      </FormGroup>
+      <FormGroup>
+        <div className="button positive">
+          <p>Create Customer</p>
+        </div>
       </FormGroup>
     </Form>
   )

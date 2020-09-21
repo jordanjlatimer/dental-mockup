@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import ActionBar from '../SubModules/ActionBar';
 import Modal from '../SubModules/Modal';
 import Table from '../SubModules/Table';
+import data from './mockData.json'
 
 export default function Orders(props){
   const [modal, setModal] = useState(false);
@@ -18,17 +19,9 @@ export default function Orders(props){
       <h1 className="moduleTitle">Orders</h1>
       <ActionBar/>
       <Table
-        data={{
-          headers: ["Vendor", "Status", "Total Cost", "Date Placed", "Date Received"],
-          rows: [
-            ["Dentsply Sirona", "Placed", "$2400", "08/09/2020", "-"],
-            ["Zahn", "Placed", "$1765", "0/18/2020", "-"],
-            ["Argen", "Received", "$2345", "05/01/2020", "05/12/2020"],
-            ["Straumann", "Received", "$1345", "06/24/2020", "06/29/2020"],
-            ["Nobel Biocare", "Cancelled", "$200", "12/02/2019", "12/11/2019"],
-          ]
-        }}
+        data={data}
         modalCallback={setModal}
+        showId
       />
     </>
   )
