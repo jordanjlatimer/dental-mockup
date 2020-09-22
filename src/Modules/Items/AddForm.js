@@ -4,11 +4,10 @@ import FormGroup from "../SubModules/Form/FormGroup";
 import Select from "../SubModules/Form/Select";
 import TextInput from "../SubModules/Form/TextInput";
 import NumberInput from "../SubModules/Form/NumberInput";
-import states from "../../dummyData/states.json"
 
-export default function AddForm(props){
+export default function CreationForm(props){
   return(
-    <Form>
+    <Form header="Add a Customer">
       <FormGroup>
         <TextInput label="First Name"/>
         <TextInput label="Last Name"/>
@@ -17,7 +16,7 @@ export default function AddForm(props){
         <TextInput label="Address Line 1"/>
         <TextInput label="Address Line 2"/>
         <TextInput label="City"/>
-        <Select label="State" placeholder="Select a state..." options={states}/>
+        <Select label="State" placeholder="Select a state..." options={["Alabama", "Alaska", "Arizona", "Arkansas", "Etc..."]}/>
         <NumberInput label="Zip"/>
       </FormGroup>
       <FormGroup>

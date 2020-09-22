@@ -3,7 +3,8 @@ import ActionBar from '../SubModules/ActionBar';
 import AddForm from './AddForm';
 import Modal from '../SubModules/Modal';
 import Table from '../SubModules/Table';
-import data from "./mockData.json"
+import data from "../../dummyData/customers.json"
+import Breadcrumbs from '../SubModules/Breadcrumbs';
 
 export default function Customers(props){
   const [modal, setModal] = useState(false);
@@ -18,10 +19,10 @@ export default function Customers(props){
           <div className="button negative" onClick={() => setModal(false)}>No</div>
         </div>
       </Modal>
-      <h1 className="moduleTitle">Customers</h1>
+      <Breadcrumbs base={subModule === "table"} header="Customers" subModule="Create a Customer" callback={setSubModule}/>
       {subModule === "table" ? (
         <>
-          <ActionBar callback={setSubModule}/>
+          <ActionBar callback={setSubModule} addLabel="Create a Customer"/>
           <Table
             data={data}
             modalCallback={setModal}

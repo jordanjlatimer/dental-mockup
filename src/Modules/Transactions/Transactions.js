@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import ActionBar from '../SubModules/ActionBar';
 import Modal from '../SubModules/Modal';
 import Table from '../SubModules/Table';
-import data from './mockData.json'
+import AddForm from './CreationForm';
+import data from '../../dummyData/transactions.json'
+import Breadcrumbs from '../SubModules/Breadcrumbs';
 
 export default function Transactions(props){
   const [modal, setModal] = useState(false);
+  const [subModule, setSubModule] = useState("table")
 
   return(
     <>
@@ -16,14 +19,19 @@ export default function Transactions(props){
           <div className="button negative" onClick={() => setModal(false)}>No</div>
         </div>
       </Modal>
-      <h1 className="moduleTitle">Transactions</h1>
-      <ActionBar/>
-      <Table
-        data={data}
-        modalCallback={setModal}
-        recordDesc="this customer"
-        showId
-      />
+      <Breadcrumbs base={subModule === "table"} header="Transactions" subModule="Create a Transaction" callback={setSubModule}/>
+      {subModule === "table" ? (
+        <>
+          <ActionBar callback={setSubModule} addLabel="Create a Transaction"/>
+          <Table
+            data={data}
+            modalCallback={setModal}
+            recActProps={{treatment: true}}
+          />
+        </>
+      ) : (
+        <AddForm/>
+      )}
     </>
   )
 }

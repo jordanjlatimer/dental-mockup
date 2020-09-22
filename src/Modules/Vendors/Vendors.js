@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import ActionBar from '../SubModules/ActionBar';
 import Modal from '../SubModules/Modal';
 import Table from '../SubModules/Table';
-import data from './mockData.json'
+import AddForm from './AddForm';
+import data from '../../dummyData/vendors.json'
+import Breadcrumbs from '../SubModules/Breadcrumbs';
 
 export default function Vendors(props){
   const [modal, setModal] = useState(false);
+  const [subModule, setSubModule] = useState("table")
 
   return(
     <>
@@ -16,13 +19,19 @@ export default function Vendors(props){
           <div className="button negative" onClick={() => setModal(false)}>No</div>
         </div>
       </Modal>
-      <h1 className="moduleTitle">Vendors</h1>
-      <ActionBar/>
-      <Table
-        data={data}
-        modalCallback={setModal}
-        recActProps={{order: true}}
-      />
+      <Breadcrumbs base={subModule === "table"} header="Vendors" subModule="Create a Vendor" callback={setSubModule}/>
+      {subModule === "table" ? (
+        <>
+          <ActionBar callback={setSubModule} addLabel="Create a Vendor"/>
+          <Table
+            data={data}
+            modalCallback={setModal}
+            recActProps={{treatment: true}}
+          />
+        </>
+      ) : (
+        <AddForm/>
+      )}
     </>
   )
 }

@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { IoIosBusiness, IoIosCart, IoIosCash, IoIosClipboard, IoIosConstruct, IoIosCube, IoIosPeople, IoIosPie, IoIosSettings, IoIosSpeedometer } from 'react-icons/io';
+import { IoIosBusiness, IoIosCart, IoIosCash, IoIosConstruct, IoIosCube, IoIosPeople, IoIosPie, IoIosSettings, IoIosSpeedometer } from 'react-icons/io';
 import Content from './Content';
 import Sidebar from './Sidebar/Sidebar'
 import SidebarAvatar from './Sidebar/SidebarAvatar';
 import SidebarItem from './Sidebar/SidebarItem';
 
 export default function App(){
-  const [curMod, setCurMod] = useState("customers")
+  const [curMod, setCurMod] = useState("transactions")
 
   return(
     <>
       <Sidebar>
-        <SidebarAvatar username="Username"/>
+        <SidebarAvatar active={curMod === "account"} username="Username" onClick={() => setCurMod("account")}/>
         <SidebarItem active={curMod === "dashboard"} icon={<IoIosSpeedometer size="20px"/>} label="Dashboard" onClick={() => setCurMod("dashboard")}/>
         <SidebarItem active={curMod === "customers"} icon={<IoIosPeople size="20px"/>} label="Customers" onClick={() => setCurMod("customers")}/>
         <SidebarItem active={curMod === "transactions"} icon={<IoIosCash size="20px"/>} label="Transactions" onClick={() => setCurMod("transactions")}/>

@@ -2,10 +2,13 @@ import React, {useState} from 'react';
 import ActionBar from '../SubModules/ActionBar';
 import Modal from '../SubModules/Modal';
 import Table from '../SubModules/Table';
-import data from './mockData.json'
+import AddForm from './AddForm';
+import data from '../../dummyData/items.json'
+import Breadcrumbs from '../SubModules/Breadcrumbs';
 
 export default function Items(props){
   const [modal, setModal] = useState(false);
+  const [subModule, setSubModule] = useState("table")
 
   return(
     <>
@@ -16,13 +19,19 @@ export default function Items(props){
           <div className="button negative" onClick={() => setModal(false)}>No</div>
         </div>
       </Modal>
-      <h1 className="moduleTitle">Items</h1>
-      <ActionBar/>
-      <Table
-        data={data}
-        modalCallback={setModal}
-        showId
-      />
+      <Breadcrumbs base={subModule === "table"} header="Items" subModule="Create an Item" callback={setSubModule}/>
+      {subModule === "table" ? (
+        <>
+          <ActionBar callback={setSubModule} addLabel="Create an Item"/>
+          <Table
+            data={data}
+            modalCallback={setModal}
+            recActProps={{treatment: true}}
+          />
+        </>
+      ) : (
+        <AddForm/>
+      )}
     </>
   )
 }

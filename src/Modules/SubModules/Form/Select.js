@@ -6,11 +6,11 @@ export default function Select(props){
   const[open, setOpen] = useState(false);
 
   return(
-    <div className="select">
+    <div className="selectInput">
       <p>{props.label}</p>
       <div className={open ? "selectControl open" : "selectControl"} onClick={() => setOpen(!open)}>
-        <p className={selected === props.placeholder ? "" : "selected"}>{selected}</p>
-        <IoIosArrowDropdown size="20px"/>
+        <p className={selected === props.placeholder ? "selectControlLabel" : "selectControlLabel selected"}>{selected}</p>
+        <IoIosArrowDropdown className={open ? "selectIcon open" : ""} size="20px"/>
       </div>
       <div className={open ? "selectMenu open" : "selectMenu"}>
         {props.options.map((item) => {

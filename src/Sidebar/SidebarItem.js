@@ -5,7 +5,7 @@ export default function SidebarItem(props){
   return(
     <div className={props.active ? "sidebarItem active" : "sidebarItem"} onClick={props.onClick}>
       {props.icon}
-      <p>{props.label}</p>
+      <p className="sidebarItemLabel">{props.label}</p>
     </div>
   )
 }

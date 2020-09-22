@@ -8,12 +8,13 @@ export default function Table(props){
   const [sort, setSort] = useState({key: null, dir: null})
 
   return(
-    <table>
+    <table className="moduleTable">
       <thead>
         <tr>
           {Object.keys(data[0]).map((key) => {
             return (
-              <th 
+              <th
+                className="moduleTableHeader"
                 key={key} 
                 onClick={() => {
                   if (sort.key === key){
@@ -43,10 +44,9 @@ export default function Table(props){
                     setData(curArray)
                   }
                 }}
-                className={sort.key === key ? (sort.dir === "asc" ? (sort.dir === "desc" ? "desc" : "") : "") : ""}
               >
                 {data[0][key]}
-                {sort.key === key ? (sort.dir === "asc" ? <IoMdArrowDropdown/> : <IoMdArrowDropup/>) : null}
+                {sort.key === key ? (sort.dir === "asc" ? <IoMdArrowDropdown className="sortIcon"/> : <IoMdArrowDropup className="sortIcon"/>) : null}
               </th>
             )
           })}
@@ -55,11 +55,11 @@ export default function Table(props){
       <tbody>
         {data.slice(1).map((row, i) => {
           return (
-            <tr key={row["id"]} onClick={() => activeRow === row["id"] ? setActiveRow(null) : setActiveRow(row["id"])} className={activeRow === row["id"] ? "active" : ""}>
+            <tr key={row["id"]} onClick={() => activeRow === row["id"] ? setActiveRow(null) : setActiveRow(row["id"])} className={activeRow === row["id"] ? "moduleTableRow active" : "moduleTableRow"}>
               {Object.keys(row).map((key, j) => {
                 return (
                   props.showId ? (
-                    <td key={key}>
+                    <td key={key} className="moduleTableCell">
                       {row[key]}
                       {j === Object.keys(row).length - 1 && activeRow === row["id"] ? (
                         <RecordActions recordDesc={props.recordDesc} modalCallback={props.modalCallback} icons={props.recActProps}/>
@@ -67,7 +67,7 @@ export default function Table(props){
                     </td>
                   ) : (
                     key === "id" ? null : (
-                      <td key={key}>
+                      <td key={key} className="moduleTableCell">
                         {row[key]}
                         {j === Object.keys(row).length - 1 && activeRow === row["id"] ? (
                           <RecordActions recordDesc={props.recordDesc} modalCallback={props.modalCallback} icons={props.recActProps}/>

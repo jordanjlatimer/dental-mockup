@@ -3,9 +3,9 @@ import { IoIosPerson } from 'react-icons/io'
 
 export default function SidebarAvatar(props){
   return(
-    <div className="avatar">
+    <div className={props.active ? "avatar active" : "avatar"} onClick={props.onClick}>
       <IoIosPerson size="80px"/>
-      <p>{props.username}</p>
+      <p className="username">{props.username}</p>
     </div>
   )
 }

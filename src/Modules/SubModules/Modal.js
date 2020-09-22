@@ -5,7 +5,7 @@ export default function Modal(props){
 
   return(
     <div className={props.open ? "modal open" : "modal"}>
-      <div>
+      <div className="modalContents">
         <div className="closeModal" onClick={() => props.modalCallback(false)}>
           <IoIosCloseCircle size="20px"/>
         </div>
