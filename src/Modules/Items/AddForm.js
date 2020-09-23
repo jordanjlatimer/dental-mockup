@@ -1,35 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "../SubModules/Form/Form";
 import FormGroup from "../SubModules/Form/FormGroup";
 import Select from "../SubModules/Form/Select";
 import TextInput from "../SubModules/Form/TextInput";
 import NumberInput from "../SubModules/Form/NumberInput";
+import vendors from "../../dummyData/vendorNames.json"
+import Checkbox from "../SubModules/Form/Checkbox"
+import RadioGroup from "../SubModules/Form/Radio/RadioGroup";
+import RadioOption from "../SubModules/Form/Radio/RadioOption";
 
 export default function CreationForm(props){
+  const [expires, setExpires] = useState(false)
+
   return(
-    <Form header="Add a Customer">
+    <Form header="Create an Item">
       <FormGroup>
-        <TextInput label="First Name"/>
-        <TextInput label="Last Name"/>
+        <NumberInput label="Item ID"/>
+        <TextInput label="Item Name"/>
+        <Select label="Vendor" placeholder="Select a vendor..." options={vendors}/>
+        <Select label="Category" placeholder="Select a category..." options={["Alloys", "Implant", "Materials", "Rotary", "Safety"]}/>
       </FormGroup>
       <FormGroup>
-        <TextInput label="Address Line 1"/>
-        <TextInput label="Address Line 2"/>
-        <TextInput label="City"/>
-        <Select label="State" placeholder="Select a state..." options={["Alabama", "Alaska", "Arizona", "Arkansas", "Etc..."]}/>
-        <NumberInput label="Zip"/>
+        <NumberInput label="Cost" money/>
+        <NumberInput label="On Hand"/>
+        <NumberInput label="Min"/>
+        <NumberInput label="Max"/>
       </FormGroup>
       <FormGroup>
-        <TextInput label="Insurance Provider"/>
-        <NumberInput label="Policy Number"/>
-      </FormGroup>
-      <FormGroup>
-        <TextInput label="Phone Number"/>
-        <TextInput label="Email"/>
+        <RadioGroup label="Does this item expire?">
+          <RadioOption value="Yes"/>
+          <RadioOption value="No"/>
+        </RadioGroup>
       </FormGroup>
       <FormGroup>
         <div className="button positive">
-          <p>Create Customer</p>
+          <p>Create</p>
         </div>
       </FormGroup>
     </Form>

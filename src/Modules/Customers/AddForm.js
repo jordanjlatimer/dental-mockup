@@ -8,7 +8,7 @@ import states from "../../dummyData/states.json"
 
 export default function AddForm(props){
   return(
-    <Form>
+    <Form header="Create a Customer">
       <FormGroup>
         <TextInput label="First Name"/>
         <TextInput label="Last Name"/>
@@ -30,7 +30,7 @@ export default function AddForm(props){
       </FormGroup>
       <FormGroup>
         <div className="button positive">
-          <p>Create Customer</p>
+          <p>Create</p>
         </div>
       </FormGroup>
     </Form>

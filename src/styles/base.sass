@@ -128,7 +128,7 @@ html, body, #root
   width: 180px
   text-indent: 30px
   font-size: 18px
-  border: 3px solid rgba(0, 0, 0, 0.281)
+  border: 2px solid #133c63
 
 .button
   display: flex
@@ -136,6 +136,7 @@ html, body, #root
   padding: 10px
   transition: all 300ms
   cursor: pointer
+  border: 2px solid #133c63
   &.positive
     background-color: #d2ebcf
     &:hover
@@ -163,6 +164,9 @@ html, body, #root
   padding: 12px 30px 12px 6px
   text-align: left
   cursor: pointer
+  transition: all 300ms
+  &:hover
+    background-color: #15416b
 
 .sortIcon
   position: absolute
@@ -226,10 +230,10 @@ html, body, #root
     fill: #f02525
 
 .modal
-  width: calc(100vw - 160px)
+  width: calc(100vw - 200px)
   height: 100vh
   position: fixed
-  left: 160px
+  left: 200px
   top: 0px
   background-color: rgba(0, 0, 0, 0.6)
   transition: all 200ms
@@ -273,7 +277,10 @@ html, body, #root
     transform: translateX(0px)
 
 .form
-  margin-top: 40px
+  margin: 0px auto
+
+.formHeader
+  font-size: 22px
 
 .formGroup
   margin-top: 40px
@@ -283,7 +290,7 @@ html, body, #root
   padding: 0px 20px 0px 0px
   font-size: 15px
 
-.textInputControl, .numberInputControl
+.textInputControl
   width: 180px
   height: 30px
   margin-top: 4px
@@ -294,6 +301,26 @@ html, body, #root
   transition: all 300ms
   &:hover, &:focus
     box-shadow: 2px 2px 8px 0px #6e6e6e
+
+.numberInputControl
+  width: 180px
+  height: 30px
+  margin-top: 4px
+  padding: 5px
+  border: 2px solid #133c63
+  border-radius: 3px
+  font-size: 13px
+  transition: all 300ms
+  &:hover, &:focus
+    box-shadow: 2px 2px 8px 0px #6e6e6e
+  &.money
+    padding-left: 20px
+
+.moneyIcon
+  position: absolute
+  top: 26px
+  left: 8px
+  color: rgba(0, 0, 0, 0.65)
 
 .textareaControl
   width: 380px
@@ -335,12 +362,12 @@ html, body, #root
     transform: rotate(180deg)
 
 .selectMenu
+  z-index: 1
   position: absolute
   top: 100%
   width: 180px
   max-height: 300px
   overflow-y: scroll
-  z-index: -1
   opacity: 0
   transform-origin: top
   transform: scaleY(0)
@@ -351,7 +378,6 @@ html, body, #root
   border-radius: 0px 0px 3px 3px
   background-color: white
   &.open
-    z-index: 1
     opacity: 1
     transform: scaleY(1)
     box-shadow: 2px 2px 8px 0px #6e6e6e

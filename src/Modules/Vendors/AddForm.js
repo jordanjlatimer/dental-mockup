@@ -29,7 +29,7 @@ export default function CreationForm(props){
       </FormGroup>
       <FormGroup>
         <div className="button positive">
-          <p>Create Customer</p>
+          <p>Create</p>
         </div>
       </FormGroup>
     </Form>

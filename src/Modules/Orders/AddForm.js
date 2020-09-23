@@ -4,32 +4,29 @@ import FormGroup from "../SubModules/Form/FormGroup";
 import Select from "../SubModules/Form/Select";
 import TextInput from "../SubModules/Form/TextInput";
 import NumberInput from "../SubModules/Form/NumberInput";
+import vendors from "../../dummyData/vendorNames.json"
+import RadioOption from "../SubModules/Form/Radio/RadioOption";
+import RadioGroup from "../SubModules/Form/Radio/RadioGroup";
+import DateInput from "../SubModules/Form/DateInput";
+import Table from "../SubModules/Table";
 
 export default function CreationForm(props){
   return(
-    <Form header="Add a Customer">
+    <Form header="Create an Order">
       <FormGroup>
-        <TextInput label="First Name"/>
-        <TextInput label="Last Name"/>
+        <Select label="Vendor" placeholder="Select a vendor..." options={vendors}/>
+        <RadioGroup label="Status">
+          <RadioOption value="Placed"/>
+          <RadioOption value="Received"/>
+        </RadioGroup>
       </FormGroup>
       <FormGroup>
-        <TextInput label="Address Line 1"/>
-        <TextInput label="Address Line 2"/>
-        <TextInput label="City"/>
-        <Select label="State" placeholder="Select a state..." options={["Alabama", "Alaska", "Arizona", "Arkansas", "Etc..."]}/>
-        <NumberInput label="Zip"/>
-      </FormGroup>
-      <FormGroup>
-        <TextInput label="Insurance Provider"/>
-        <NumberInput label="Policy Number"/>
-      </FormGroup>
-      <FormGroup>
-        <TextInput label="Phone Number"/>
-        <TextInput label="Email"/>
+        <DateInput label="Date Placed"/>
+        <DateInput label="Date Received"/>
       </FormGroup>
       <FormGroup>
         <div className="button positive">
-          <p>Create Customer</p>
+          <p>Create</p>
         </div>
       </FormGroup>
     </Form>

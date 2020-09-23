@@ -8,7 +8,7 @@ export default function ActionBar(props){
         <IoIosSearch className="searchIcon" size="24px"/>
         <input className="searchInputControl"/>
       </div>
-      <div className="button positive" onClick={() => props.callback("add")}>
+      <div className="button positive" onClick={() => props.callback()}>
         <IoIosAddCircle className="buttonIcon" size="24px"/>
         <p className="buttonLabel">{props.addLabel}</p>
       </div>

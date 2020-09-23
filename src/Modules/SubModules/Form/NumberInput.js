@@ -4,7 +4,8 @@ export default function NumberInput(props){
   return(
     <div className="numberInput">
       <p>{props.label}</p>
-      <input className="numberInputControl" type="number"/>
+      <input className={props.money ? "numberInputControl money" : "numberInputControl"} type="number"/>
+      {props.money ? <div className="moneyIcon">$</div> : null}
   </div>
   )
 }

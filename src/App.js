@@ -6,7 +6,7 @@ import SidebarAvatar from './Sidebar/SidebarAvatar';
 import SidebarItem from './Sidebar/SidebarItem';
 
 export default function App(){
-  const [curMod, setCurMod] = useState("transactions")
+  const [curMod, setCurMod] = useState("dashboard")
 
   return(
     <>
