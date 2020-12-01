@@ -15,7 +15,7 @@ export default function CreationForm(props){
   return(
     <Form header="Create an Item">
       <FormGroup>
-        <NumberInput label="Item ID"/>
+        <NumberInput label="Item Number"/>
         <TextInput label="Item Name"/>
         <Select label="Vendor" placeholder="Select a vendor..." options={vendors}/>
         <Select label="Category" placeholder="Select a category..." options={["Alloys", "Implant", "Materials", "Rotary", "Safety"]}/>

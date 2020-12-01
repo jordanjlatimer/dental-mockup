@@ -16,7 +16,7 @@ export default function Items(props){
       <Modal open={modal} modalCallback={setModal}>
       {modalContents === "delete" ? (
           <>
-            <p>Are you sure you want to delete this customer?</p>
+            <p>Are you sure you want to delete this item?</p>
             <div className="modalActions">
               <div className="button positive">Yes</div>
               <div className="button negative" onClick={() => setModal(false)}>No</div>

@@ -154,6 +154,7 @@ html, body, #root {
   text-indent: 30px;
   font-size: 18px;
   border: 2px solid #133c63;
+  border-radius: 3px 3px 0px 0px;
 }
 
 .button {
@@ -162,16 +163,15 @@ html, body, #root {
   padding: 10px;
   transition: all 300ms;
   cursor: pointer;
-  border: 2px solid #133c63;
 }
 .button.positive {
-  background-color: #d2ebcf;
+  background-color: #b9e0b5;
 }
 .button.positive:hover {
-  background-color: #bbecb6;
+  background-color: #a6e9a0;
 }
 .button.negative {
-  background-color: #ebcfcf;
+  background-color: #ebbfbf;
 }
 .button.negative:hover {
   background-color: #ecb6b6;

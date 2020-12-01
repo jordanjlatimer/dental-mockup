@@ -7,10 +7,11 @@ import NumberInput from "../SubModules/Form/NumberInput";
 
 export default function CreationForm(props){
   return(
-    <Form header="Add a Customer">
+    <Form header="Create a Vendor">
       <FormGroup>
-        <TextInput label="First Name"/>
-        <TextInput label="Last Name"/>
+        <TextInput label="Name"/>
+        <TextInput label="Phone Number"/>
+        <TextInput label="Email"/>
       </FormGroup>
       <FormGroup>
         <TextInput label="Address Line 1"/>
@@ -20,12 +21,7 @@ export default function CreationForm(props){
         <NumberInput label="Zip"/>
       </FormGroup>
       <FormGroup>
-        <TextInput label="Insurance Provider"/>
-        <NumberInput label="Policy Number"/>
-      </FormGroup>
-      <FormGroup>
-        <TextInput label="Phone Number"/>
-        <TextInput label="Email"/>
+        <NumberInput label="Shipping Cost" money/>
       </FormGroup>
       <FormGroup>
         <div className="button positive">

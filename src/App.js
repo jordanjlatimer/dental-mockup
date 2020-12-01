@@ -13,7 +13,7 @@ export default function App(){
       <Sidebar>
         <SidebarAvatar active={curMod === "account"} username="Username" onClick={() => setCurMod("account")}/>
         <SidebarItem active={curMod === "dashboard"} icon={<IoIosSpeedometer size="20px"/>} label="Dashboard" onClick={() => setCurMod("dashboard")}/>
-        <SidebarItem active={curMod === "customers"} icon={<IoIosPeople size="20px"/>} label="Customers" onClick={() => setCurMod("customers")}/>
+        <SidebarItem active={curMod === "customers"} icon={<IoIosPeople size="20px"/>} label="Patients" onClick={() => setCurMod("customers")}/>
         <SidebarItem active={curMod === "transactions"} icon={<IoIosCash size="20px"/>} label="Transactions" onClick={() => setCurMod("transactions")}/>
         <SidebarItem active={curMod === "orders"} icon={<IoIosCart size="20px"/>} label="Orders" onClick={() => setCurMod("orders")}/>
         <SidebarItem active={curMod === "items"} icon={<IoIosCube size="20px"/>} label="Items" onClick={() => setCurMod("items")}/>

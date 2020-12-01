@@ -25,8 +25,8 @@ export default function Customers(props){
         ) : <AddForm/>
         }
       </Modal>
-      <Breadcrumbs base={subModule === "table"} header="Customers" subModule="Create a Customer" callback={setSubModule}/>
-      <ActionBar callback={() => {setModalContents("add"); setModal(true);}} addLabel="Create a Customer"/>
+      <Breadcrumbs base={subModule === "table"} header="Patients" subModule="Create a Customer" callback={setSubModule}/>
+      <ActionBar callback={() => {setModalContents("add"); setModal(true);}} addLabel="Create a Patient"/>
       <Table
         data={data}
         modalCallback={() => {setModal(true); setModalContents("delete");}}

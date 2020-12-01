@@ -25,6 +25,27 @@ export default function CreationForm(props){
         <DateInput label="Date Received"/>
       </FormGroup>
       <FormGroup>
+        <Table 
+          data={[
+            {
+              id: "Item Number", 
+              name: "Name", 
+              vendor: "Vendor", 
+              quantity: "Quantity", 
+              unit_cost: "Unit Cost", 
+              total_cost: "Total Cost"
+            }, {
+              id: "1234567", 
+              name: "Abutment", 
+              vendor: "Straumann", 
+              quantity: "2", 
+              unit_cost: "$40", 
+              total_cost: "$80"}
+          ]}
+          showId
+        />
+      </FormGroup>
+      <FormGroup>
         <div className="button positive">
           <p>Create</p>
         </div>
