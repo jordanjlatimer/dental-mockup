@@ -2,8 +2,6 @@ import React from "react";
 import Form from "../SubModules/Form/Form";
 import FormGroup from "../SubModules/Form/FormGroup";
 import Select from "../SubModules/Form/Select";
-import TextInput from "../SubModules/Form/TextInput";
-import NumberInput from "../SubModules/Form/NumberInput";
 import vendors from "../../dummyData/vendorNames.json"
 import RadioOption from "../SubModules/Form/Radio/RadioOption";
 import RadioGroup from "../SubModules/Form/Radio/RadioGroup";

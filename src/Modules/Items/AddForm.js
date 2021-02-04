@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import Form from "../SubModules/Form/Form";
 import FormGroup from "../SubModules/Form/FormGroup";
 import Select from "../SubModules/Form/Select";
 import TextInput from "../SubModules/Form/TextInput";
 import NumberInput from "../SubModules/Form/NumberInput";
 import vendors from "../../dummyData/vendorNames.json"
-import Checkbox from "../SubModules/Form/Checkbox"
 import RadioGroup from "../SubModules/Form/Radio/RadioGroup";
 import RadioOption from "../SubModules/Form/Radio/RadioOption";
 
 export default function CreationForm(props){
-  const [expires, setExpires] = useState(false)
-
   return(
     <Form header="Create an Item">
       <FormGroup>
