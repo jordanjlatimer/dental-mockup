@@ -10,7 +10,9 @@
   box-sizing: border-box;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   width: 100%;
   height: 100%;
 }
@@ -253,10 +255,12 @@ html, body, #root {
   animation: fade 400ms forwards;
 }
 
-.treatmentIcon, .cartIcon {
+.treatmentIcon,
+.cartIcon {
   margin: 0px 3px;
 }
-.treatmentIcon path, .cartIcon path {
+.treatmentIcon path,
+.cartIcon path {
   fill: blue;
 }
 
@@ -348,7 +352,12 @@ html, body, #root {
   display: flex;
 }
 
-.textInput, .numberInput, .selectInput, .dateInput, .textareaInput, .radioGroup {
+.textInput,
+.numberInput,
+.selectInput,
+.dateInput,
+.textareaInput,
+.radioGroup {
   padding: 0px 20px 0px 0px;
   font-size: 15px;
 }
@@ -363,7 +372,8 @@ html, body, #root {
   font-size: 13px;
   transition: all 300ms;
 }
-.textInputControl:hover, .textInputControl:focus {
+.textInputControl:hover,
+.textInputControl:focus {
   box-shadow: 2px 2px 8px 0px #6e6e6e;
 }
 
@@ -377,7 +387,8 @@ html, body, #root {
   font-size: 13px;
   transition: all 300ms;
 }
-.numberInputControl:hover, .numberInputControl:focus {
+.numberInputControl:hover,
+.numberInputControl:focus {
   box-shadow: 2px 2px 8px 0px #6e6e6e;
 }
 .numberInputControl.money {
@@ -401,7 +412,8 @@ html, body, #root {
   font-size: 13px;
   transition: all 300ms;
 }
-.textareaControl:hover, .textareaControl:focus {
+.textareaControl:hover,
+.textareaControl:focus {
   box-shadow: 2px 2px 8px 0px #6e6e6e;
 }
 

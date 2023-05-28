@@ -1,9 +1,5 @@
-import React from "react"
+import React from "react";
 
-export default function FormGroup(props){
-  return(
-    <div className="formGroup">
-      {props.children}
-    </div>
-  )
+export default function FormGroup(props) {
+  return <div className="formGroup">{props.children}</div>;
 }

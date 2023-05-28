@@ -1,10 +1,10 @@
-import React from "react"
+import React from "react";
 
-export default function TextareaInput(props){
-  return(
+export default function TextareaInput(props) {
+  return (
     <div className="textareaInput">
       <p>{props.label}</p>
-      <textarea className="textareaControl"/>
-  </div>
-  )
+      <textarea className="textareaControl" />
+    </div>
+  );
 }
